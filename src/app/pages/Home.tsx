@@ -23,10 +23,10 @@ export default function Home() {
   ];
 
   const featuredArtist = {
-    name: 'ELÍAS THORNE',
-    bio: 'Thorne es un creador multidisciplinar afincado en Madrid. Su obra se centra en la "honestidad de los materiales" y las cualidades arquitectonicas del arte digital.',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYW4lMjBwb3J0cmFpdCUyMG1vZGVybiUyMGFydGlzdHxlbnwxfHx8fDE3NzUzNDU3MjB8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    quote: '"La ausencia de color permite que la geometría hable por sí misma. Cuando eliminamos la distracción, queda la arquitectura del alma."'
+    name: 'COLECTIVO MUSA',
+    bio: 'Musa es un laboratorio de pintura colaborativa centrado en el diálogo visual espontáneo. Su obra desafía la autoría individual para celebrar la creación colectiva.',
+    image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21lbiUyMHBhaW50aW5nJTIwYXJ0JTIwc3R1ZGlvfGVufDF8fHx8MTc3NTM0NjUxMHww&ixlib=rb-4.1.0&q=80&w=1080',
+    quote: '"El arte no es un acto solitario, es una conversación silente entre miradas que comparten un mismo lienzo."'
   };
 
   return (

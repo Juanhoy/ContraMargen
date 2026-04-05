@@ -1,6 +1,6 @@
-import { createBrowserRouter } from 'react-router';
-import { Link, Outlet } from 'react-router';
+import { createBrowserRouter, Link, Outlet, useLocation } from 'react-router';
 import { Header } from './components/Header';
+import { useEffect } from 'react';
 import Home from './pages/Home';
 import Publicaciones from './pages/Publicaciones';
 import ArtesVisuales from './pages/ArtesVisuales';
@@ -10,6 +10,12 @@ import Contacto from './pages/Contacto';
 import logo from '@/assets/logo.jpg';
 
 function Root() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -62,7 +68,6 @@ function NotFound() {
     </div>
   );
 }
-
 export const router = createBrowserRouter([
   {
     path: '/',

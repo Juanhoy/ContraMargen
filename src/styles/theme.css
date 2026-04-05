@@ -102,6 +102,12 @@
   * {
     border-radius: 0px !important;
     border: none;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--surface);
   }
 
   body {
@@ -131,8 +137,16 @@
     font-family: 'Manrope', sans-serif;
   }
 
-  label, button {
+  label, button, a {
     font-family: 'Manrope', sans-serif;
+  }
+
+  button:active {
+    transform: scale(0.98);
+  }
+
+  a:hover {
+    opacity: 0.8;
   }
 
   /**
