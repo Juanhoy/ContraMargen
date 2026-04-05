@@ -25,7 +25,7 @@ export function Header() {
             <img 
               src={logo} 
               alt="Contra Margen Logo" 
-              className="h-10 w-auto object-contain grayscale invert brightness-200"
+              className="h-10 w-auto object-contain"
             />
           </Link>
 
@@ -35,7 +35,7 @@ export function Header() {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`relative transition-all uppercase tracking-widest text-[10px] font-bold ${
+                className={`relative transition-all uppercase tracking-widest text-[12px] font-bold ${
                   location.pathname === item.path
                     ? 'text-primary'
                     : 'text-foreground/60 hover:text-primary'
@@ -52,7 +52,7 @@ export function Header() {
           {/* Search/User Actions */}
           <div className="flex items-center gap-6">
             <button className="p-2 hover:bg-surface-container-low transition-colors">
-              <Search className="w-4 h-4 text-foreground/60" />
+              <Search className="w-5 h-5 text-foreground/60" />
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

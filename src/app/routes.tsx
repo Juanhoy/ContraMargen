@@ -20,7 +20,7 @@ function Root() {
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-12 mb-16">
             <div className="flex items-center gap-4">
-              <img src={logo} alt="Contra Margen" className="h-6 w-auto grayscale" />
+              <img src={logo} alt="Contra Margen" className="h-6 w-auto" />
               <span className="text-[10px] uppercase tracking-[0.4em] font-bold text-foreground/40">Editorial Excellence</span>
             </div>
             <nav className="flex flex-wrap justify-center gap-8 md:gap-12">
