@@ -59,33 +59,36 @@ export default function Home() {
       </section>
 
       {/* Featured Grid Section (Asymmetrical) */}
-      <section className="py-24 bg-surface-container-low px-4">
+      <section className="py-32 bg-surface-container-low px-4 sm:px-12">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-0 items-center">
-            {/* Image on left 2/3 */}
-            <div className="md:col-span-8 relative">
-              <ImageWithFallback
-                src={featuredArticles[0].image}
-                alt={featuredArticles[0].title}
-                className="w-full aspect-[16/9] object-cover grayscale hover:grayscale-0 transition-all duration-1000"
-              />
+          <div className="flex flex-col lg:flex-row items-center relative min-h-[600px]">
+            {/* Image on left - Full width on mobile, 70% on desktop */}
+            <div className="w-full lg:w-[65%] shrink-0">
+               <div className="aspect-[16/9] lg:aspect-[4/3] overflow-hidden">
+                  <ImageWithFallback
+                    src={featuredArticles[0].image}
+                    alt={featuredArticles[0].title}
+                    className="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 hover:brightness-100 transition-all duration-1000"
+                  />
+               </div>
             </div>
-            {/* Overlapping text on right */}
-            <div className="md:col-span-5 md:-ml-32 z-10 bg-surface p-10 md:p-16">
-              <span className="uppercase tracking-[0.2em] text-[10px] font-bold text-primary mb-4 block">
+            
+            {/* Text Overlay - Overlaps the image on desktop */}
+            <div className="w-full lg:w-[45%] lg:-ml-[10%] z-10 bg-surface p-12 lg:p-20 shadow-2xl space-y-8 mt-[-40px] lg:mt-0">
+              <span className="uppercase tracking-[0.2em] text-[10px] font-bold text-primary block">
                 {featuredArticles[0].category}
               </span>
-              <h2 className="text-4xl md:text-5xl mb-6 leading-tight">
-                {featuredArticles[0].title}
+              <h2 className="display-lg leading-[0.85] lowercase tracking-tight">
+                {featuredArticles[0].title}.
               </h2>
-              <p className="body-lg text-foreground/70 mb-8">
-                {featuredArticles[0].excerpt}
+              <p className="body-lg text-foreground/60 italic leading-relaxed">
+                "{featuredArticles[0].excerpt}"
               </p>
               <Link 
                 to={featuredArticles[0].link}
-                className="text-xs uppercase tracking-widest font-bold text-primary hover:text-primary-container inline-flex items-center gap-4 transition-colors"
+                className="inline-flex items-center gap-6 text-[10px] uppercase tracking-widest font-bold text-foreground border-b-2 border-primary pb-4 hover:gap-8 transition-all"
               >
-                LEER ARTÍCULO <ArrowRight className="w-4 h-4" />
+                LEER ARTÍCULO <ArrowRight className="w-5 h-5 text-primary" />
               </Link>
             </div>
           </div>
