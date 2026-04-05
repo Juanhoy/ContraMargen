@@ -36,7 +36,7 @@ export default function Home() {
         <div className="container mx-auto">
           <div className="max-w-5xl">
             <span className="uppercase tracking-[0.3em] text-[10px] font-bold text-primary mb-6 block">
-              Curada Colección • Vol. 12
+              Curada Colección • Vol. 02
             </span>
             <h1 className="display-lg mb-8 text-foreground leading-[0.85]">
               LA GALERÍA <br /> <span className="text-primary-container">VIVIENTE.</span>

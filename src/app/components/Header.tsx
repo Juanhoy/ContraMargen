@@ -25,7 +25,7 @@ export function Header() {
             <img 
               src={logo} 
               alt="Contra Margen Logo" 
-              className="h-10 w-auto object-contain"
+              className="h-10 w-auto object-contain grayscale invert brightness-200"
             />
           </Link>
 

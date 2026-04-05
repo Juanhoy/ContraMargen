@@ -1,28 +1,41 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --font-size: 16px;
-  --background: #fcf9f8;
-  --foreground: #1c1b1b;
-  --surface: #fcf9f8;
-  --surface-container-low: #f6f3f2;
-  --surface-container: #f0edec;
-  --surface-container-high: #e9e5e3;
-  --surface-container-lowest: #ffffff;
-  --surface-variant: rgba(252, 249, 248, 0.6);
+  --foreground: #FCF9F8;
+  --background: #000000;
   
-  --primary: #8a5100;
-  --primary-container: #ef8f00;
-  --on-primary: #ffffff;
+  --primary: #EF8F00;
+  --on-primary: #000000;
+  --primary-container: #EF8F00;
+  --on-primary-container: #000000;
   
-  --secondary: #9c6d3c;
-  --muted: #f6f3f2;
-  --muted-foreground: #877362;
+  --secondary: #2A2118;
+  --on-secondary: #EBE0D1;
+  --secondary-container: #4D3D2D;
+  --on-secondary-container: #FFDCC0;
+
+  --tertiary: #A68E74;
+  --on-tertiary: #000000;
   
-  --outline: #877362;
-  --outline-variant: rgba(218, 194, 174, 0.2);
+  --error: #FFB4AB;
+  --on-error: #690005;
   
-  --radius: 0px;
+  --surface: #000000;
+  --on-surface: #FCF9F8;
+  --surface-variant: #2D2621;
+  --on-surface-variant: #D0C4BB;
+  
+  --surface-container-lowest: #0A0A0A;
+  --surface-container-low: #121212;
+  --surface-container: #1C1C1C;
+  --surface-container-high: #262626;
+  --surface-container-highest: #333333;
+
+  --outline: #998E84;
+  --outline-variant: #4D443D;
+  
+  --inverse-surface: #FCF9F8;
+  --inverse-on-surface: #121212;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
   --font-weight-bold: 700;

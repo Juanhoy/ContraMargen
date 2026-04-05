@@ -4,36 +4,20 @@ import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 export default function Publicaciones() {
   const publications = [
     {
-      id: 12,
-      title: 'CONTRA MARGEN VOL. 12',
+      id: 2,
+      title: 'CONTRA MARGEN VOL. 02',
       subtitle: 'FRONTERAS DEL ARTE CONTEMPORÁNEO',
       date: 'MARZO 2026',
       cover: 'https://images.unsplash.com/photo-1721491702252-dafcd4169a51?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcnQlMjBtYWdhemluZSUyMHB1YmxpY2F0aW9uJTIwbGF5b3V0fGVufDF8fHx8MTc3NTM0NTMyNnww&ixlib=rb-4.1.0&q=80&w=1080',
       description: 'Esta edición explora las fronteras entre lo físico y lo digital, lo real y lo imaginado en la era post-pantalla.',
     },
     {
-      id: 11,
-      title: 'CONTRA MARGEN VOL. 11',
+      id: 1,
+      title: 'CONTRA MARGEN VOL. 01',
       subtitle: 'VOCES EMERGENTES',
       date: 'ENERO 2026',
       cover: 'https://images.unsplash.com/photo-1773799038951-5c0f777246b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBzY3VscHR1cmUlMjBpbnN0YWxsYXRpb24lMjBhcnR8ZW58MXx8fHwxNzc1MzQ1MzI2fDA&ixlib=rb-4.1.0&q=80&w=1080',
       description: 'Un especial dedicado a los artistas que están redefiniendo el panorama cultural desde la periferia.',
-    },
-    {
-      id: 3,
-      title: 'Contra Margen Vol. 10',
-      subtitle: 'Arte Urbano y Espacio Público',
-      date: 'Noviembre 2025',
-      cover: 'https://images.unsplash.com/photo-1695221605217-171ebd060159?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHJlZXQlMjBhcnQlMjBncmFmZml0aSUyMHVyYmFufGVufDF8fHx8MTc3NTIzNTkxN3ww&ixlib=rb-4.1.0&q=80&w=1080',
-      description: 'Investigamos la transformación de las ciudades a través de intervenciones artísticas.',
-    },
-    {
-      id: 4,
-      title: 'Contra Margen Vol. 9',
-      subtitle: 'Fotografía y Memoria',
-      date: 'Septiembre 2025',
-      cover: 'https://images.unsplash.com/photo-1612718115067-8f92930ce598?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwaG90b2dyYXBoeSUyMGV4aGliaXRpb24lMjBibGFjayUyMHdoaXRlfGVufDF8fHx8MTc3NTM0NTMyN3ww&ixlib=rb-4.1.0&q=80&w=1080',
-      description: 'Un análisis profundo sobre el papel de la fotografía en la construcción de la memoria colectiva.',
     },
   ];
 
@@ -72,10 +56,8 @@ export default function Publicaciones() {
                       alt={pub.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                      <span 
-                        className="text-sm text-[#212121] font-['Manrope',sans-serif]"
-                      >
+                    <div className="absolute top-4 right-4 bg-primary px-3 py-1">
+                      <span className="text-[10px] uppercase font-bold text-on-primary tracking-widest">
                         Vol. {pub.id}
                       </span>
                     </div>
