@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router';
-import { Outlet } from 'react-router';
+import { Link, Outlet } from 'react-router';
 import { Header } from './components/Header';
 import Home from './pages/Home';
 import Publicaciones from './pages/Publicaciones';
@@ -7,6 +7,7 @@ import ArtesVisuales from './pages/ArtesVisuales';
 import ArtesEscritas from './pages/ArtesEscritas';
 import Musica from './pages/Musica';
 import Contacto from './pages/Contacto';
+import logo from '@/assets/logo.jpg';
 
 function Root() {
   return (
@@ -15,66 +16,24 @@ function Root() {
       <main>
         <Outlet />
       </main>
-      <footer className="bg-[#212121] text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h3 
-                className="text-2xl mb-4"
-                style={{ fontFamily: 'Playfair Display, serif' }}
-              >
-                Contra Margen
-              </h3>
-              <p 
-                className="text-white/70"
-                style={{ fontFamily: 'Newsreader, serif' }}
-              >
-                Revista de arte, literatura y cultura contemporánea.
-              </p>
+      <footer className="bg-surface pt-24 pb-12 px-4">
+        <div className="container mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-12 mb-16">
+            <div className="flex items-center gap-4">
+              <img src={logo} alt="Contra Margen" className="h-6 w-auto grayscale" />
+              <span className="text-[10px] uppercase tracking-[0.4em] font-bold text-foreground/40">Editorial Excellence</span>
             </div>
-            <div>
-              <h4 
-                className="mb-4 font-['Manrope',sans-serif]"
-              >
-                Secciones
-              </h4>
-              <ul className="space-y-2 text-white/70 font-['Manrope',sans-serif]">
-                <li><a href="/publicaciones" className="hover:text-[#FFC000] transition-colors">Publicaciones</a></li>
-                <li><a href="/artes-visuales" className="hover:text-[#FFC000] transition-colors">Artes Visuales</a></li>
-                <li><a href="/artes-escritas" className="hover:text-[#FFC000] transition-colors">Artes Escritas</a></li>
-                <li><a href="/musica" className="hover:text-[#FFC000] transition-colors">Música</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 
-                className="mb-4 font-['Manrope',sans-serif]"
-              >
-                Conecta
-              </h4>
-              <ul className="space-y-2 text-white/70 font-['Manrope',sans-serif]">
-                <li><a href="/contacto" className="hover:text-[#FFC000] transition-colors">Contacto</a></li>
-                <li><a href="#" className="hover:text-[#FFC000] transition-colors">Newsletter</a></li>
-                <li><a href="#" className="hover:text-[#FFC000] transition-colors">Colabora</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 
-                className="mb-4 font-['Manrope',sans-serif]"
-              >
-                Síguenos
-              </h4>
-              <ul className="space-y-2 text-white/70 font-['Manrope',sans-serif]">
-                <li><a href="#" className="hover:text-[#FFC000] transition-colors">Instagram</a></li>
-                <li><a href="#" className="hover:text-[#FFC000] transition-colors">Twitter</a></li>
-                <li><a href="#" className="hover:text-[#FFC000] transition-colors">Facebook</a></li>
-              </ul>
-            </div>
+            <nav className="flex flex-wrap justify-center gap-8 md:gap-12">
+              <Link to="#" className="text-[10px] uppercase tracking-widest font-bold text-foreground/60 hover:text-primary transition-colors">Política de Privacidad</Link>
+              <Link to="#" className="text-[10px] uppercase tracking-widest font-bold text-foreground/60 hover:text-primary transition-colors">Términos de Servicio</Link>
+              <Link to="#" className="text-[10px] uppercase tracking-widest font-bold text-foreground/60 hover:text-primary transition-colors">Colaboraciones</Link>
+              <Link to="#" className="text-[10px] uppercase tracking-widest font-bold text-foreground/60 hover:text-primary transition-colors">Boletín</Link>
+              <Link to="/contacto" className="text-[10px] uppercase tracking-widest font-bold text-foreground/60 hover:text-primary transition-colors">Contacto</Link>
+            </nav>
           </div>
-          <div className="border-t border-white/20 pt-8 text-center">
-            <p 
-              className="text-white/70 font-['Manrope',sans-serif]"
-            >
-              © 2026 Contra Margen. Todos los derechos reservados.
+          <div className="text-center">
+            <p className="text-[10px] uppercase tracking-[0.2em] text-foreground/40">
+              © 2026 THE DIGITAL CURATOR. EXCELENCIA EDITORIAL EN EL ARTE.
             </p>
           </div>
         </div>
@@ -85,26 +44,20 @@ function Root() {
 
 function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="text-center">
-        <h1 
-          className="text-6xl text-[#FFC000] mb-4"
-          style={{ fontFamily: 'Playfair Display, serif' }}
-        >
+    <div className="min-h-screen flex items-center justify-center bg-surface">
+      <div className="text-center space-y-8">
+        <h1 className="text-9xl text-primary leading-none">
           404
         </h1>
-        <p 
-          className="text-2xl text-[#212121] mb-8"
-          style={{ fontFamily: 'Newsreader, serif' }}
-        >
-          Página no encontrada
+        <p className="text-xs uppercase tracking-[0.5em] font-bold text-foreground/60">
+          Página no encontrada.
         </p>
-        <a
-          href="/"
-          className="inline-block bg-[#FFC000] text-[#212121] px-8 py-3 rounded-full hover:bg-opacity-90 transition-all font-['Manrope',sans-serif]"
+        <Link
+          to="/"
+          className="inline-flex h-16 items-center px-10 bg-primary text-white uppercase tracking-widest text-xs font-bold transition-all"
         >
-          Volver al inicio
-        </a>
+          Volver al Inicio
+        </Link>
       </div>
     </div>
   );

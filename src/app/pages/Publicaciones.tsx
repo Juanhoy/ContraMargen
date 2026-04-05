@@ -4,20 +4,20 @@ import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 export default function Publicaciones() {
   const publications = [
     {
-      id: 1,
-      title: 'Contra Margen Vol. 12',
-      subtitle: 'Fronteras del Arte Contemporáneo',
-      date: 'Marzo 2026',
+      id: 12,
+      title: 'CONTRA MARGEN VOL. 12',
+      subtitle: 'FRONTERAS DEL ARTE CONTEMPORÁNEO',
+      date: 'MARZO 2026',
       cover: 'https://images.unsplash.com/photo-1721491702252-dafcd4169a51?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcnQlMjBtYWdhemluZSUyMHB1YmxpY2F0aW9uJTIwbGF5b3V0fGVufDF8fHx8MTc3NTM0NTMyNnww&ixlib=rb-4.1.0&q=80&w=1080',
-      description: 'Esta edición explora las fronteras entre lo físico y lo digital, lo real y lo imaginado.',
+      description: 'Esta edición explora las fronteras entre lo físico y lo digital, lo real y lo imaginado en la era post-pantalla.',
     },
     {
-      id: 2,
-      title: 'Contra Margen Vol. 11',
-      subtitle: 'Voces Emergentes',
-      date: 'Enero 2026',
+      id: 11,
+      title: 'CONTRA MARGEN VOL. 11',
+      subtitle: 'VOCES EMERGENTES',
+      date: 'ENERO 2026',
       cover: 'https://images.unsplash.com/photo-1773799038951-5c0f777246b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBzY3VscHR1cmUlMjBpbnN0YWxsYXRpb24lMjBhcnR8ZW58MXx8fHwxNzc1MzQ1MzI2fDA&ixlib=rb-4.1.0&q=80&w=1080',
-      description: 'Un especial dedicado a los artistas que están redefiniendo el panorama cultural.',
+      description: 'Un especial dedicado a los artistas que están redefiniendo el panorama cultural desde la periferia.',
     },
     {
       id: 3,
@@ -38,22 +38,20 @@ export default function Publicaciones() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="bg-surface">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#FFC000] to-[#ff9500] py-20">
-        <div className="container mx-auto px-4">
-          <h1 
-            className="text-6xl text-white mb-4"
-            style={{ fontFamily: 'Playfair Display, serif' }}
-          >
-            Publicaciones
+      <section className="pt-32 pb-24 px-4 bg-surface-container-low">
+        <div className="container mx-auto">
+          <span className="uppercase tracking-[0.3em] text-[10px] font-bold text-primary mb-6 block">
+             Archivo Editorial
+          </span>
+          <h1 className="display-lg mb-8">
+            EDICIONES.
           </h1>
-          <p 
-            className="text-xl text-white/90 max-w-2xl"
-            style={{ fontFamily: 'Newsreader, serif' }}
-          >
-            Explora nuestra colección de ediciones que documentan y celebran 
-            las expresiones artísticas de nuestra época.
+          <p className="body-lg max-w-2xl text-foreground/70">
+            Explora nuestra colección curada de ediciones que documentan y celebran 
+            las expresiones artísticas de nuestra época. Cada volumen es un objeto 
+            de estudio y preservación cultural.
           </p>
         </div>
       </section>
@@ -83,37 +81,30 @@ export default function Publicaciones() {
                     </div>
                   </div>
                 </div>
-                <div className="md:w-1/2 flex flex-col justify-center">
-                  <div className="flex items-center gap-2 mb-3 text-[#A35765]">
+                <div className="lg:w-1/2 flex flex-col justify-center space-y-8 p-8 md:p-0">
+                  <div className="flex items-center gap-4 text-primary">
                     <Calendar className="w-4 h-4" />
-                    <span className="font-['Manrope',sans-serif] text-sm">
+                    <span className="text-[10px] uppercase tracking-widest font-bold">
                       {pub.date}
                     </span>
                   </div>
-                  <h2 
-                    className="text-3xl mb-2 group-hover:text-[#FFC000] transition-colors"
-                    style={{ fontFamily: 'Playfair Display, serif' }}
-                  >
-                    {pub.title}
-                  </h2>
-                  <h3 
-                    className="text-xl text-[#E91E63] mb-4"
-                    style={{ fontFamily: 'Playfair Display, serif' }}
-                  >
-                    {pub.subtitle}
-                  </h3>
-                  <p 
-                    className="text-[#A35765] leading-relaxed mb-6"
-                    style={{ fontFamily: 'Newsreader, serif' }}
-                  >
+                  <div className="space-y-4">
+                    <h2 className="text-4xl md:text-5xl leading-tight">
+                      {pub.title}
+                    </h2>
+                    <h3 className="text-xs uppercase tracking-[0.2em] font-bold text-primary-container">
+                      {pub.subtitle}
+                    </h3>
+                  </div>
+                  <p className="body-lg text-foreground/60 leading-relaxed">
                     {pub.description}
                   </p>
-                  <div className="flex gap-3">
-                    <button className="flex items-center gap-2 bg-[#FFC000] text-[#212121] px-6 py-2 rounded-full hover:bg-opacity-90 transition-all font-['Manrope',sans-serif]">
+                  <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                    <button className="flex items-center justify-center gap-4 bg-primary text-white h-14 px-8 uppercase tracking-widest text-[10px] font-bold hover:translate-y-[-4px] transition-transform">
                       <Download className="w-4 h-4" />
                       Descargar PDF
                     </button>
-                    <button className="flex items-center gap-2 border-2 border-[#FFC000] text-[#212121] px-6 py-2 rounded-full hover:bg-[#FFC000] transition-all font-['Manrope',sans-serif]">
+                    <button className="flex items-center justify-center gap-4 border-2 border-outline-variant text-foreground h-14 px-8 uppercase tracking-widest text-[10px] font-bold hover:bg-foreground hover:text-white transition-all">
                       Leer en línea
                     </button>
                   </div>
@@ -125,27 +116,21 @@ export default function Publicaciones() {
       </section>
 
       {/* Subscribe Section */}
-      <section className="bg-[#212121] py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h2 
-            className="text-5xl text-white mb-6"
-            style={{ fontFamily: 'Playfair Display, serif' }}
-          >
-            Suscríbete a Contra Margen
+      <section className="bg-foreground py-32 px-4 text-surface">
+        <div className="container mx-auto text-center space-y-12">
+          <h2 className="display-lg leading-[0.85]">
+            MANTENTE <br /> <span className="text-primary-container">CURADO.</span>
           </h2>
-          <p 
-            className="text-xl text-white/80 mb-8 max-w-2xl mx-auto"
-            style={{ fontFamily: 'Newsreader, serif' }}
-          >
+          <p className="body-lg text-surface/60 max-w-2xl mx-auto">
             Recibe nuestras nuevas ediciones y contenido exclusivo directamente en tu correo.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <div className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
             <input
               type="email"
-              placeholder="Tu correo electrónico"
-              className="flex-1 px-6 py-3 rounded-full bg-white/10 text-white placeholder:text-white/60 border-2 border-white/20 focus:border-[#FFC000] focus:outline-none transition-colors font-['Manrope',sans-serif]"
+              placeholder="TU CORREO ELECTRÓNICO"
+              className="flex-1 px-8 py-5 bg-surface/5 border-b-2 border-surface/20 text-surface placeholder:text-surface/30 focus:border-primary-container outline-none uppercase tracking-widest text-[10px] transition-colors"
             />
-            <button className="bg-[#FFC000] text-[#212121] px-8 py-3 rounded-full hover:bg-opacity-90 transition-all font-['Manrope',sans-serif] whitespace-nowrap">
+            <button className="bg-primary-container text-white px-12 py-5 uppercase tracking-widest text-[10px] font-bold hover:bg-surface hover:text-foreground transition-all">
               Suscribirme
             </button>
           </div>
