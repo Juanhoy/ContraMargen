@@ -11,7 +11,7 @@ export function Header() {
     { path: '/', label: 'Inicio' },
     { path: '/publicaciones', label: 'Ediciones' },
     { path: '/artes-visuales', label: 'Artes Visuales' },
-    { path: '/artes-escritas', label: 'Artes Escritas' },
+    { path: '/sala-de-lectura', label: 'Sala de lectura' },
     { path: '/musica', label: 'Música' },
     { path: '/contacto', label: 'Contacto' },
   ];

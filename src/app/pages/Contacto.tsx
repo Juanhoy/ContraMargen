@@ -60,7 +60,7 @@ export default function Contacto() {
                      <select className="w-full h-16 bg-surface-container px-6 border-b-2 border-outline-variant focus:border-primary outline-none uppercase tracking-widest text-[10px] transition-colors appearance-none">
                         <option>Propuesta de colaboración</option>
                         <option>Envío de obra (Artes Visuales)</option>
-                        <option>Envío de texto (Artes Escritas)</option>
+                        <option>Envío de texto (Sala de lectura)</option>
                         <option>Propuesta musical</option>
                         <option>Consulta general</option>
                      </select>
@@ -166,6 +166,48 @@ export default function Contacto() {
                </div>
             </div>
          </div>
+      </section>
+
+      {/* Equipo Editorial Section */}
+      <section className="py-32 px-4 border-b border-outline-variant">
+        <div className="container mx-auto">
+           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+              <h2 className="text-7xl lowercase tracking-tighter leading-none">
+                 equipo <br /> editorial.
+              </h2>
+              <span className="uppercase tracking-[0.5em] text-[10px] font-bold text-primary">Contra Margen No. 1</span>
+           </div>
+           
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+              <div className="group space-y-8">
+                 <div className="aspect-[4/5] bg-surface-container-high overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+                    <img 
+                       src="/revista/Edicion1/obras/obra-06.png" 
+                       alt="Cindy Santa" 
+                       className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000"
+                    />
+                 </div>
+                 <div className="space-y-2">
+                    <h3 className="text-3xl lowercase tracking-tighter">cindy santa.</h3>
+                    <p className="text-[10px] uppercase tracking-widest font-bold text-primary">Dirección Editorial</p>
+                 </div>
+              </div>
+
+              <div className="group space-y-8">
+                 <div className="aspect-[4/5] bg-surface-container-high overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+                    <img 
+                       src="/revista/Edicion1/obras/obra-07.png" 
+                       alt="Julian González" 
+                       className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000"
+                    />
+                 </div>
+                 <div className="space-y-2">
+                    <h3 className="text-3xl lowercase tracking-tighter">julian gonzález.</h3>
+                    <p className="text-[10px] uppercase tracking-widest font-bold text-primary">Curaduría y Contenidos</p>
+                 </div>
+              </div>
+           </div>
+        </div>
       </section>
 
       {/* FAQ Section */}

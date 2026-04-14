@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import Home from './pages/Home';
 import Publicaciones from './pages/Publicaciones';
 import ArtesVisuales from './pages/ArtesVisuales';
-import ArtesEscritas from './pages/ArtesEscritas';
+import SalaDeLectura from './pages/SalaDeLectura';
 import Musica from './pages/Musica';
 import Contacto from './pages/Contacto';
 import logo from '@/assets/logo.jpg';
@@ -76,7 +76,7 @@ export const router = createBrowserRouter([
       { index: true, Component: Home },
       { path: 'publicaciones', Component: Publicaciones },
       { path: 'artes-visuales', Component: ArtesVisuales },
-      { path: 'artes-escritas', Component: ArtesEscritas },
+      { path: 'sala-de-lectura', Component: SalaDeLectura },
       { path: 'musica', Component: Musica },
       { path: 'contacto', Component: Contacto },
       { path: '*', Component: NotFound },

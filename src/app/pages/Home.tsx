@@ -7,25 +7,25 @@ export default function Home() {
     {
       id: 1,
       category: 'Artes Visuales',
-      title: 'LA NUEVA VANGUARDIA DIGITAL',
+      title: 'DIMENSIÓN ESPIRITUAL',
       excerpt: 'Exploramos las corrientes artísticas que están redefiniendo los límites de la expresión visual en la era post-internet.',
-      image: 'https://images.unsplash.com/photo-1723721229325-b286656e768a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb250ZW1wb3JhcnklMjBhcnQlMjBleGhpYml0aW9uJTIwZ2FsbGVyeXxlbnwxfHx8fDE3NzUzNDUyOTV8MA&ixlib=rb-4.1.0&q=80&w=1080',
+      image: '/revista/Edicion1/obras/IsabellaZapata-DimensionEspiritual.png',
       link: '/artes-visuales',
     },
     {
       id: 2,
-      category: 'Artes Escritas',
-      title: 'POESÍA EN LOS MÁRGENES',
+      category: 'Sala de lectura',
+      title: 'HABITANDO LA MEMORIA',
       excerpt: 'Una colección de voces que habitan los espacios intermedios entre la tradición y la experimentación literaria.',
-      image: 'https://images.unsplash.com/photo-1591079071536-b005da4a9677?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwb2V0cnklMjBib29rJTIwd3JpdGluZyUyMGxpdGVyYXR1cmV8ZW58MXx8fHwxNzc1MzQ1Mjk1fDA&ixlib=rb-4.1.0&q=80&w=1080',
-      link: '/artes-escritas',
+      image: '/revista/Edicion1/obras/MonicaAlvarez-Habitandolamemoria1.png',
+      link: '/sala-de-lectura',
     },
   ];
 
   const featuredArtist = {
-    name: 'COLECTIVO MUSA',
-    bio: 'Musa es un laboratorio de pintura colaborativa centrado en el diálogo visual espontáneo. Su obra desafía la autoría individual para celebrar la creación colectiva.',
-    image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21lbiUyMHBhaW50aW5nJTIwYXJ0JTIwc3R1ZGlvfGVufDF8fHx8MTc3NTM0NjUxMHww&ixlib=rb-4.1.0&q=80&w=1080',
+    name: 'LA MALACARA',
+    bio: 'La Malacara explora la intersección entre el cuerpo, la memoria y la resistencia visual a través de texturas experimentales y collage contemporáneo.',
+    image: '/revista/Edicion1/obras/LaMalacara-Contenerse.png',
     quote: '"El arte no es un acto solitario, es una conversación silente entre miradas que comparten un mismo lienzo."'
   };
 
@@ -143,10 +143,17 @@ export default function Home() {
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
+            {[
+              '/revista/Edicion1/obras/JuanVerdeza-Escultura1.png',
+              '/revista/Edicion1/obras/JuanVerdeza-Escultura2.png',
+              '/revista/Edicion1/obras/MonicaAlvarez-Habitandolamemoria2.png',
+              '/revista/Edicion1/obras/MonicaAlvarez-Habitandolamemoria3.png',
+              '/revista/Edicion1/obras/PaolaQuintero-LaSeparación.png',
+              '/revista/Edicion1/obras/obra-06.png',
+            ].map((img, i) => (
               <div key={i} className="aspect-square bg-surface hover:opacity-80 transition-opacity cursor-pointer overflow-hidden">
                  <ImageWithFallback
-                    src={`https://picsum.photos/seed/${i + 10}/800/800`}
+                    src={img}
                     alt="Arte de la semana"
                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                   />
