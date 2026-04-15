@@ -1,9 +1,6 @@
 import { Eye, Heart, Calendar, Download } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
-// Ruta base del CDN con /v1/
-const CLOUDINARY_BASE_URL = 'https://res.cloudinary.com/dvm7fjhxs/image/upload/v1/Obras%20Contra%20Margen%20Edicion%201/';
-
 export default function ArtesVisuales() {
   const artworks = [
     {
@@ -12,7 +9,7 @@ export default function ArtesVisuales() {
       artist: 'ISABELLA ZAPATA',
       medium: 'Pintura',
       year: '2026',
-      image: `${CLOUDINARY_BASE_URL}IsabellaZapata-DimensionEspiritual.png`,
+      image: 'https://res.cloudinary.com/dvm7fjhxs/image/upload/v1776217793/IsabellaZapata-DimensionEspiritual_jm6h83.png',
       views: 2341,
       likes: 189,
     },
@@ -22,7 +19,7 @@ export default function ArtesVisuales() {
       artist: 'JUAN VERDEZA',
       medium: 'Escultura',
       year: '2025',
-      image: `${CLOUDINARY_BASE_URL}JuanVerdeza-Escultura1.png`,
+      image: 'https://res.cloudinary.com/dvm7fjhxs/image/upload/v1776217794/JuanVerdeza-Escultura1_rrgsf5.png',
       views: 1876,
       likes: 234,
     },
@@ -32,7 +29,7 @@ export default function ArtesVisuales() {
       artist: 'MÓNICA ÁLVAREZ',
       medium: 'Instalación',
       year: '2026',
-      image: `${CLOUDINARY_BASE_URL}MonicaAlvarez-Habitandolamemoria1.png`,
+      image: 'https://res.cloudinary.com/dvm7fjhxs/image/upload/v1776217785/MonicaAlvarez-Habitandolamemoria1_stcpfj.png',
       views: 3102,
       likes: 412,
     },
@@ -42,7 +39,7 @@ export default function ArtesVisuales() {
       artist: 'PAOLA QUINTERO',
       medium: 'Pintura',
       year: '2025',
-      image: `${CLOUDINARY_BASE_URL}PaolaQuintero-ArcanoMayor.png`,
+      image: 'https://res.cloudinary.com/dvm7fjhxs/image/upload/v1776217791/PaolaQuintero-ArcanoMayor_ajssif.png',
       views: 2547,
       likes: 298,
     },
@@ -52,7 +49,8 @@ export default function ArtesVisuales() {
       artist: 'LA MALACARA',
       medium: 'Pintura',
       year: '2025',
-      image: `${CLOUDINARY_BASE_URL}LaMalacara-Contenerse.png`,
+      // 👇 FALTA ESTA URL: Reemplázala cuando la tengas
+      image: 'https://res.cloudinary.com/dvm7fjhxs/image/upload/LaMalacara-Contenerse.png',
       views: 1923,
       likes: 167,
     },
@@ -62,10 +60,29 @@ export default function ArtesVisuales() {
       artist: 'PAOLA QUINTERO',
       medium: 'Pintura',
       year: '2026',
-      // Actualizado: Nombre limpio, sin tildes y sin códigos aleatorios
-      image: `${CLOUDINARY_BASE_URL}PaolaQuintero-LaSeparacion.png`,
+      image: 'https://res.cloudinary.com/dvm7fjhxs/image/upload/v1776217797/PaolaQuintero-LaSeparaci%C3%B3n_inaomk.png',
       views: 4231,
       likes: 523,
+    },
+    {
+      id: 7,
+      title: 'LA PROFECÍA 1',
+      artist: 'MANUELA RAIZ',
+      medium: 'Pintura',
+      year: '2026',
+      image: 'https://res.cloudinary.com/dvm7fjhxs/image/upload/v1776217794/obra-06_nnvuzn.png',
+      views: 1562,
+      likes: 142,
+    },
+    {
+      id: 8,
+      title: 'LA PROFECÍA 2',
+      artist: 'MANUELA RAIZ',
+      medium: 'Pintura',
+      year: '2026',
+      image: 'https://res.cloudinary.com/dvm7fjhxs/image/upload/v1776217796/obra-07_p0kzws.png',
+      views: 1893,
+      likes: 201,
     },
   ];
 
@@ -84,25 +101,6 @@ export default function ArtesVisuales() {
             Explorando las fronteras de la expresión visual contemporánea a través
             de una lente crítica y vanguardista.
           </p>
-        </div>
-      </section>
-
-      {/* Featured Essay Section */}
-      <section className="py-24 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <div className="space-y-8">
-            <span className="uppercase tracking-[0.2em] text-[10px] font-bold text-primary block">
-              Ensayo Destacado
-            </span>
-            <h2 className="text-4xl md:text-5xl leading-[0.9]">
-              EL ARTE DIGITAL Y LA DEMOCRATIZACIÓN DE LA CREACIÓN.
-            </h2>
-            <p className="body-lg text-foreground/70 border-l-4 border-primary pl-8 py-4">
-              En la última década, hemos sido testigos de una transformación radical en la forma
-              en que se crea, se distribuye y se consume el arte. Las herramientas digitales han
-              abierto nuevas posibilidades para artistas de todo el mundo.
-            </p>
-          </div>
         </div>
       </section>
 
