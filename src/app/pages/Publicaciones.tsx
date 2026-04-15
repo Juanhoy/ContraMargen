@@ -1,22 +1,17 @@
 import { Calendar, Download } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
+// Importamos la imagen local desde la carpeta assets
+import portadaEdicion1 from '../assets/PortadaContramargenEdicion1.png';
 
 export default function Publicaciones() {
   const publications = [
-    {
-      id: 2,
-      title: 'CONTRA MARGEN VOL. 02',
-      subtitle: 'FRONTERAS DEL ARTE CONTEMPORÁNEO',
-      date: 'MARZO 2026',
-      cover: 'https://images.unsplash.com/photo-1721491702252-dafcd4169a51?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcnQlMjBtYWdhemluZSUyMHB1YmxpY2F0aW9uJTIwbGF5b3V0fGVufDF8fHx8MTc3NTM0NTMyNnww&ixlib=rb-4.1.0&q=80&w=1080',
-      description: 'Esta edición explora las fronteras entre lo físico y lo digital, lo real y lo imaginado en la era post-pantalla.',
-    },
     {
       id: 1,
       title: 'CONTRA MARGEN VOL. 01',
       subtitle: 'VOCES EMERGENTES',
       date: 'ENERO 2026',
-      cover: 'https://images.unsplash.com/photo-1773799038951-5c0f777246b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBzY3VscHR1cmUlMjBpbnN0YWxsYXRpb24lMjBhcnR8ZW58MXx8fHwxNzc1MzQ1MzI2fDA&ixlib=rb-4.1.0&q=80&w=1080',
+      // Usamos la variable importada en lugar de una URL externa
+      cover: portadaEdicion1,
       description: 'Un especial dedicado a los artistas que están redefiniendo el panorama cultural desde la periferia.',
     },
   ];
@@ -27,14 +22,14 @@ export default function Publicaciones() {
       <section className="pt-32 pb-24 px-4 bg-surface-container-low">
         <div className="container mx-auto">
           <span className="uppercase tracking-[0.3em] text-[10px] font-bold text-primary mb-6 block">
-             Archivo Editorial
+            Archivo Editorial
           </span>
           <h1 className="display-lg mb-8">
             EDICIONES.
           </h1>
           <p className="body-lg max-w-2xl text-foreground/70">
-            Explora nuestra colección curada de ediciones que documentan y celebran 
-            las expresiones artísticas de nuestra época. Cada volumen es un objeto 
+            Explora nuestra colección curada de ediciones que documentan y celebran
+            las expresiones artísticas de nuestra época. Cada volumen es un objeto
             de estudio y preservación cultural.
           </p>
         </div>
@@ -43,7 +38,7 @@ export default function Publicaciones() {
       {/* Publications Grid */}
       <section className="container mx-auto px-4 py-20">
         <div className="grid md:grid-cols-2 gap-12">
-          {publications.map((pub, index) => (
+          {publications.map((pub) => (
             <article
               key={pub.id}
               className="group cursor-pointer"
