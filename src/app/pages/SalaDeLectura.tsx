@@ -1,11 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
-import { BookOpen, User, Clock, ChevronUp } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { BookOpen, User, Clock, ChevronUp, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
 export default function SalaDeLectura() {
-  const [expandedId, setExpandedId] = useState<number | null>(null);
+  const [selectedId, setSelectedId] = useState<number | null>(null);
 
   const writings = [
     {
@@ -110,6 +110,47 @@ A la mañana siguiente cuando venía de comprar huevos y arepas de la tienda de 
     ],
   };
 
+  // --- Lógica de Navegación del Modal ---
+  const currentIndex = writings.findIndex(w => w.id === selectedId);
+  const selectedWriting = selectedId ? writings[currentIndex] : null;
+
+  const handleNext = () => {
+    if (currentIndex !== -1) {
+      const nextIndex = (currentIndex + 1) % writings.length;
+      setSelectedId(writings[nextIndex].id);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentIndex !== -1) {
+      const prevIndex = (currentIndex - 1 + writings.length) % writings.length;
+      setSelectedId(writings[prevIndex].id);
+    }
+  };
+
+  // Prevenir scroll en el body cuando el modal está abierto y soportar teclado
+  useEffect(() => {
+    if (selectedId !== null) {
+      document.body.style.overflow = 'hidden';
+
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') setSelectedId(null);
+        if (e.key === 'ArrowRight') handleNext();
+        if (e.key === 'ArrowLeft') handlePrev();
+      };
+
+      window.addEventListener('keydown', handleKeyDown);
+      return () => {
+        window.removeEventListener('keydown', handleKeyDown);
+      };
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup en caso de que el componente se desmonte
+    return () => { document.body.style.overflow = 'unset'; };
+  }, [selectedId, currentIndex]);
+
   return (
     <div className="bg-surface">
       {/* Hero Section */}
@@ -163,7 +204,7 @@ A la mañana siguiente cuando venía de comprar huevos y arepas de la tienda de 
       </section>
 
       {/* Writings Grid Section */}
-      <section className="py-24 bg-surface-container px-4">
+      <section className="py-24 bg-surface-container px-4 relative">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
             <h2 className="text-5xl lowercase leading-none tracking-tighter">
@@ -202,21 +243,17 @@ A la mañana siguiente cuando venía de comprar huevos y arepas de la tienda de 
                     {writing.title}
                   </h3>
 
-                  <div className="relative transition-all duration-500">
-                    <p className={`body-lg text-foreground/80 leading-relaxed ${expandedId === writing.id ? 'whitespace-pre-wrap text-base' : 'italic text-foreground/60'}`}>
-                      {expandedId === writing.id ? writing.fullText : `"${writing.excerpt}"`}
+                  <div className="relative">
+                    <p className="body-lg text-foreground/80 leading-relaxed italic text-foreground/60">
+                      "{writing.excerpt}"
                     </p>
                   </div>
 
                   <button
-                    onClick={() => setExpandedId(expandedId === writing.id ? null : writing.id)}
+                    onClick={() => setSelectedId(writing.id)}
                     className="text-[10px] mt-4 uppercase tracking-widest font-bold text-foreground border-b-2 border-primary pb-2 inline-flex items-center gap-4 hover:text-primary transition-colors"
                   >
-                    {expandedId === writing.id ? (
-                      <>CERRAR LECTURA <ChevronUp className="w-4 h-4" /></>
-                    ) : (
-                      <>LEER COMPLETO <BookOpen className="w-4 h-4" /></>
-                    )}
+                    LEER COMPLETO <BookOpen className="w-4 h-4" />
                   </button>
                 </div>
               </article>
@@ -224,6 +261,65 @@ A la mañana siguiente cuando venía de comprar huevos y arepas de la tienda de 
           </div>
         </div>
       </section>
+
+      {/* Modal / Pop-up de Lectura */}
+      {selectedWriting && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-12 bg-black/80 backdrop-blur-md transition-opacity duration-300"
+          onClick={() => setSelectedId(null)}
+        >
+          {/* Contenedor del Modal */}
+          <div
+            className="bg-surface w-full max-w-4xl max-h-[90vh] sm:max-h-full h-full flex flex-col relative shadow-2xl overflow-hidden"
+            onClick={e => e.stopPropagation()} // Evita que el click dentro del modal lo cierre
+          >
+            {/* Header del modal (Navegación + Cerrar) */}
+            <div className="flex items-center justify-between p-4 md:p-6 border-b border-outline-variant bg-surface sticky top-0 z-10">
+              <div className="flex gap-2 md:gap-4">
+                <button
+                  onClick={handlePrev}
+                  className="flex items-center gap-2 px-3 py-2 text-[10px] uppercase font-bold tracking-widest hover:bg-surface-container transition-colors"
+                >
+                  <ChevronLeft className="w-4 h-4" /> <span className="hidden sm:inline">Anterior</span>
+                </button>
+                <button
+                  onClick={handleNext}
+                  className="flex items-center gap-2 px-3 py-2 text-[10px] uppercase font-bold tracking-widest hover:bg-surface-container transition-colors"
+                >
+                  <span className="hidden sm:inline">Siguiente</span> <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
+              <button
+                onClick={() => setSelectedId(null)}
+                className="flex items-center gap-2 px-3 py-2 text-[10px] uppercase font-bold tracking-widest hover:bg-surface-container transition-colors text-primary"
+              >
+                Cerrar <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* Cuerpo del modal (Texto) */}
+            <div className="p-6 md:p-16 overflow-y-auto custom-scrollbar">
+              <div className="max-w-2xl mx-auto space-y-8 md:space-y-12">
+                <div className="space-y-4">
+                  <span className="text-[10px] uppercase tracking-widest font-bold text-primary">
+                    {selectedWriting.type} • {selectedWriting.readTime}
+                  </span>
+                  <h2 className="text-4xl md:text-5xl leading-tight">{selectedWriting.title}</h2>
+                  <p className="text-[10px] uppercase tracking-widest font-bold text-foreground/60">
+                    POR <span className="text-foreground">{selectedWriting.author}</span>
+                  </p>
+                </div>
+
+                <div className="pt-8 border-t border-outline-variant">
+                  <p className="body-lg text-foreground/80 leading-relaxed whitespace-pre-wrap text-base md:text-lg">
+                    {selectedWriting.fullText}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Podcast Section */}
       <section className="py-32 px-4 bg-surface-container-high border-t border-outline-variant">
