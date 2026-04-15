@@ -1,8 +1,8 @@
 import { Eye, Heart, Calendar, Download } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
-// Base Cloudinary CDN route (Cloud Name + Encoded Folder Path)
-const CLOUDINARY_BASE_URL = 'https://res.cloudinary.com/dvm7fjhxs/image/upload/Obras%20Contra%20Margen%20Edicion%201/';
+// Se añadió 'v1/' que Cloudinary suele requerir para carpetas con espacios
+const CLOUDINARY_BASE_URL = 'https://res.cloudinary.com/dvm7fjhxs/image/upload/v1/Obras%20Contra%20Margen%20Edicion%201/';
 
 export default function ArtesVisuales() {
   const artworks = [
@@ -62,7 +62,8 @@ export default function ArtesVisuales() {
       artist: 'PAOLA QUINTERO',
       medium: 'Pintura',
       year: '2026',
-      image: `${CLOUDINARY_BASE_URL}PaolaQuintero-LaSeparación.png`,
+      // Codificación URL para la 'ó' (%C3%B3) vital para que la imagen cargue
+      image: `${CLOUDINARY_BASE_URL}PaolaQuintero-LaSeparaci%C3%B3n.png`,
       views: 4231,
       likes: 523,
     },
