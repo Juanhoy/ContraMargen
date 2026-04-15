@@ -1,6 +1,6 @@
 import { Calendar, Download } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-// Importamos la imagen local desde la carpeta assets
+// Importación directa de la imagen desde la carpeta assets local
 import portadaEdicion1 from '../assets/PortadaContramargenEdicion1.png';
 
 export default function Publicaciones() {
@@ -10,7 +10,7 @@ export default function Publicaciones() {
       title: 'CONTRA MARGEN VOL. 01',
       subtitle: 'VOCES EMERGENTES',
       date: 'ENERO 2026',
-      // Usamos la variable importada en lugar de una URL externa
+      // Llamamos a la variable importada
       cover: portadaEdicion1,
       description: 'Un especial dedicado a los artistas que están redefiniendo el panorama cultural desde la periferia.',
     },
