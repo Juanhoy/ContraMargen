@@ -1,7 +1,7 @@
 import { Calendar, Download } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-// Subimos tres niveles para llegar a la raíz de src y entrar a assets
-import portadaEdicion1 from '../../../assets/PortadaContramargenEdicion1.png';
+// Se corrige a dos niveles de profundidad y extensión .jpg para coincidir con el repo
+import portadaEdicion1 from '../../assets/PortadaContramargenEdicion1.jpg';
 
 export default function Publicaciones() {
   const publications = [
