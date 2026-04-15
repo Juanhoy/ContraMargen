@@ -1,6 +1,9 @@
 import { Eye, Heart, Calendar, Download } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
+// Base Cloudinary CDN route (Cloud Name + Encoded Folder Path)
+const CLOUDINARY_BASE_URL = 'https://res.cloudinary.com/dvm7fjhxs/image/upload/Obras%20Contra%20Margen%20Edicion%201/';
+
 export default function ArtesVisuales() {
   const artworks = [
     {
@@ -9,7 +12,7 @@ export default function ArtesVisuales() {
       artist: 'ISABELLA ZAPATA',
       medium: 'Pintura',
       year: '2026',
-      image: '/revista/Edicion1/obras/IsabellaZapata-DimensionEspiritual.png',
+      image: `${CLOUDINARY_BASE_URL}IsabellaZapata-DimensionEspiritual.png`,
       views: 2341,
       likes: 189,
     },
@@ -19,7 +22,7 @@ export default function ArtesVisuales() {
       artist: 'JUAN VERDEZA',
       medium: 'Escultura',
       year: '2025',
-      image: '/revista/Edicion1/obras/JuanVerdeza-Escultura1.png',
+      image: `${CLOUDINARY_BASE_URL}JuanVerdeza-Escultura1.png`,
       views: 1876,
       likes: 234,
     },
@@ -29,7 +32,7 @@ export default function ArtesVisuales() {
       artist: 'MÓNICA ÁLVAREZ',
       medium: 'Instalación',
       year: '2026',
-      image: '/revista/Edicion1/obras/MonicaAlvarez-Habitandolamemoria1.png',
+      image: `${CLOUDINARY_BASE_URL}MonicaAlvarez-Habitandolamemoria1.png`,
       views: 3102,
       likes: 412,
     },
@@ -39,7 +42,7 @@ export default function ArtesVisuales() {
       artist: 'PAOLA QUINTERO',
       medium: 'Pintura',
       year: '2025',
-      image: '/revista/Edicion1/obras/PaolaQuintero-ArcanoMayor.png',
+      image: `${CLOUDINARY_BASE_URL}PaolaQuintero-ArcanoMayor.png`,
       views: 2547,
       likes: 298,
     },
@@ -49,7 +52,7 @@ export default function ArtesVisuales() {
       artist: 'LA MALACARA',
       medium: 'Pintura',
       year: '2025',
-      image: '/revista/Edicion1/obras/LaMalacara-Contenerse.png',
+      image: `${CLOUDINARY_BASE_URL}LaMalacara-Contenerse.png`,
       views: 1923,
       likes: 167,
     },
@@ -59,7 +62,7 @@ export default function ArtesVisuales() {
       artist: 'PAOLA QUINTERO',
       medium: 'Pintura',
       year: '2026',
-      image: '/revista/Edicion1/obras/PaolaQuintero-LaSeparación.png',
+      image: `${CLOUDINARY_BASE_URL}PaolaQuintero-LaSeparación.png`,
       views: 4231,
       likes: 523,
     },
@@ -71,13 +74,13 @@ export default function ArtesVisuales() {
       <section className="relative pt-32 pb-24 px-4 bg-surface-container-low">
         <div className="container mx-auto">
           <span className="uppercase tracking-[0.3em] text-[10px] font-bold text-primary mb-6 block">
-             Curaduría Visual
+            Curaduría Visual
           </span>
           <h1 className="display-lg mb-8">
             ARTES VISUALES.
           </h1>
           <p className="body-lg max-w-2xl text-foreground/70">
-            Explorando las fronteras de la expresión visual contemporánea a través 
+            Explorando las fronteras de la expresión visual contemporánea a través
             de una lente crítica y vanguardista.
           </p>
         </div>
@@ -94,8 +97,8 @@ export default function ArtesVisuales() {
               EL ARTE DIGITAL Y LA DEMOCRATIZACIÓN DE LA CREACIÓN.
             </h2>
             <p className="body-lg text-foreground/70 border-l-4 border-primary pl-8 py-4">
-              En la última década, hemos sido testigos de una transformación radical en la forma 
-              en que se crea, se distribuye y se consume el arte. Las herramientas digitales han 
+              En la última década, hemos sido testigos de una transformación radical en la forma
+              en que se crea, se distribuye y se consume el arte. Las herramientas digitales han
               abierto nuevas posibilidades para artistas de todo el mundo.
             </p>
           </div>
@@ -113,11 +116,10 @@ export default function ArtesVisuales() {
               {['Todo', 'Pintura', 'Escultura', 'Digital', 'Fotografía'].map((filter) => (
                 <button
                   key={filter}
-                  className={`text-[10px] uppercase tracking-widest font-bold transition-all px-4 py-2 ${
-                    filter === 'Todo'
-                      ? 'bg-primary text-white'
-                      : 'text-foreground/40 hover:text-primary'
-                  }`}
+                  className={`text-[10px] uppercase tracking-widest font-bold transition-all px-4 py-2 ${filter === 'Todo'
+                    ? 'bg-primary text-white'
+                    : 'text-foreground/40 hover:text-primary'
+                    }`}
                 >
                   {filter}
                 </button>
@@ -176,7 +178,7 @@ export default function ArtesVisuales() {
             ¿ERES ARTISTA VISUAL?
           </h2>
           <p className="body-lg text-white/80">
-            Comparte tu trabajo con nuestra comunidad. Envíanos tu portafolio y 
+            Comparte tu trabajo con nuestra comunidad. Envíanos tu portafolio y
             forma parte de la próxima edición de Contra Margen.
           </p>
           <button className="h-16 px-12 bg-white text-primary uppercase tracking-widest text-xs font-bold hover:translate-y-[-4px] transition-transform">
