@@ -49,8 +49,7 @@ export default function ArtesVisuales() {
       artist: 'LA MALACARA',
       medium: 'Pintura',
       year: '2025',
-      // 👇 FALTA ESTA URL: Reemplázala cuando la tengas
-      image: 'https://res.cloudinary.com/dvm7fjhxs/image/upload/LaMalacara-Contenerse.png',
+      image: 'https://res.cloudinary.com/dvm7fjhxs/image/upload/v1776220172/LaMalacara-Contenerse_qpts6w.png',
       views: 1923,
       likes: 167,
     },
@@ -116,8 +115,8 @@ export default function ArtesVisuales() {
                 <button
                   key={filter}
                   className={`text-[10px] uppercase tracking-widest font-bold transition-all px-4 py-2 ${filter === 'Todo'
-                      ? 'bg-primary text-white'
-                      : 'text-foreground/40 hover:text-primary'
+                    ? 'bg-primary text-white'
+                    : 'text-foreground/40 hover:text-primary'
                     }`}
                 >
                   {filter}
@@ -136,7 +135,7 @@ export default function ArtesVisuales() {
                   <ImageWithFallback
                     src={artwork.image}
                     alt={artwork.title}
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                    className="w-full h-full object-cover transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-6 left-6 right-6 text-white">
