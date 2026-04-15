@@ -1,7 +1,7 @@
 import { Calendar, Download } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-// Corregimos la ruta: subimos dos niveles para llegar a src/ y luego entramos a assets/
-import portadaEdicion1 from '../../assets/PortadaContramargenEdicion1.png';
+// Subimos tres niveles para llegar a la raíz de src y entrar a assets
+import portadaEdicion1 from '../../../assets/PortadaContramargenEdicion1.png';
 
 export default function Publicaciones() {
   const publications = [
@@ -36,13 +36,13 @@ export default function Publicaciones() {
 
       {/* Publications Grid */}
       <section className="container mx-auto px-4 py-20">
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-1 max-w-4xl mx-auto">
           {publications.map((pub) => (
             <article
               key={pub.id}
               className="group cursor-pointer"
             >
-              <div className="flex flex-col md:flex-row gap-6">
+              <div className="flex flex-col md:flex-row gap-12">
                 <div className="md:w-1/2">
                   <div className="relative aspect-[3/4] overflow-hidden rounded-lg shadow-lg">
                     <ImageWithFallback
@@ -57,7 +57,7 @@ export default function Publicaciones() {
                     </div>
                   </div>
                 </div>
-                <div className="lg:w-1/2 flex flex-col justify-center space-y-8 p-8 md:p-0">
+                <div className="lg:w-1/2 flex flex-col justify-center space-y-8 md:p-0">
                   <div className="flex items-center gap-4 text-primary">
                     <Calendar className="w-4 h-4" />
                     <span className="text-[10px] uppercase tracking-widest font-bold">
